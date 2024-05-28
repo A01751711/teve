@@ -16,7 +16,7 @@ class Tele : public Electrodomestico{
     double pulgadas;
     std::string entrada;
    
-    
+    public:
     
     void set_tipotv(std::string tipot);
     std::string get_tipotv();

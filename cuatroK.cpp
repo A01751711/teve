@@ -23,7 +23,7 @@ void CuatroK::activar(){setCuatroK(true);}
 void CuatroK::desactivar(){setCuatroK(false);}
 
 std::string CuatroK::toString(){
-    return "Tele(" + Producto::toString() + Electrodomestico::toString() + Tele::toString() +
+    return "CuatroK(" + Tele::toString() +
             "," + std::to_string(cuatroka) + ")";
 
 }

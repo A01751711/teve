@@ -44,5 +44,5 @@ std::string Producto::get_marca()
 
 std::string Producto::toString()
 {
-    return "Producto(" + nombre  + marca + std::to_string(precio) + ")";
+    return "Producto(" + nombre  + "," + marca + "," + std::to_string(precio) + ")";
 }

@@ -19,7 +19,7 @@ void Inteligente::set_streaming(std::string stream){streaming = stream;}
 std::string Inteligente::get_streaming(){return streaming;}
 
 std::string Inteligente::toString(){
-    return "Tele(" + Producto::toString() + Electrodomestico::toString() + Tele::toString() +
+    return "SmarTv(" + Tele::toString() +  
             "," + streaming + ")";
 
 }

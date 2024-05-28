@@ -26,7 +26,7 @@ void Tele::subir_v(){volumen = volumen + 1;}
 void Tele::bajar_v(){volumen = volumen - 1;}
 
 string Tele::toString(){
-    return "Tele(" + Producto::toString() + Electrodomestico::toString() +
+    return "Tele(" + Electrodomestico::toString() + 
             "," + tipotv +
             "," + std::to_string(volumen) +
             "," + std::to_string(pulgadas) + ")";

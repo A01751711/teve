@@ -6,15 +6,11 @@
 #include "producto.h"
 
 class Tienda{
-    private:
-     std::string nombre;
+    public:
+    std::string nombre;
     std::vector <Producto> inventario;
 
 
-    public:
-
-
-    
     Tienda();
     Tienda(std::string nom);
     std::vector<Producto> mostrarInventario();

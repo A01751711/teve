@@ -36,6 +36,5 @@ void Tienda::realizarEntrega(std::string direccion) {
 }
 
 std::string Tienda::toString(){
-    mostrarInventario();
     return "Tienda(" + nombre + ")";
 }

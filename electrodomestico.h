@@ -11,6 +11,8 @@ class Electrodomestico: public Producto{
 private:
     bool encendido {false};
     std::string funcionActual {"Ninguna"};
+    
+protected:
     Electrodomestico();
 
 public:

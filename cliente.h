@@ -14,10 +14,10 @@ class Cliente{
     
     Cliente(std::string nombre, std::string tarjetaCredito, std::string direccion);
     void comprar(Producto tv);
-    std::string getTarjetaCredito() const; 
-    std::string getDireccion() const;
+    std::string getTarjetaCredito(); 
+    std::string getDireccion();
 
-    std::string Cliente::toString();
+    std::string toString();
 };
 
 #endif

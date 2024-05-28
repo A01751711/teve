@@ -23,7 +23,7 @@ void TresD::activar(){setTresD(true);}
 void TresD::desactivar(){setTresD(false);}
 
 std::string TresD::toString(){
-    return "Tele(" + Producto::toString() + Electrodomestico::toString() + Tele::toString() +
+    return "TresD(" + Tele::toString() +
             "," + std::to_string(tresde) + ")";
 
 }

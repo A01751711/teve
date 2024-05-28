@@ -7,17 +7,14 @@ class Producto{
 
     protected:
     Producto();
-    
-    
-    private:
 
     Producto(std::string nomb, std::string marc, double p);
-    std::string nombre;
-    std::string marca;
-    double precio;
     
 
     public:
+    std::string nombre;
+    std::string marca;
+    double precio;
     void set_nombre(std::string nombre);
     std::string get_nombre();
     void set_precio(double precio);

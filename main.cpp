@@ -31,19 +31,23 @@ int main() {
     palacio.anadir_producto(tv2);
     palacio.anadir_producto(tv3);
 
-  
+    std::cout << "****** 3 tiendas" << std::endl;
 
-    liverpool.toString();
-    sears.toString();
-    palacio.toString();
+    std::cout << std:: endl << liverpool.toString() << std::endl;
+    std::cout << sears.toString() << std::endl;
+    std::cout << palacio.toString() << std::endl;
 
-
+    std::cout << std::endl;
 
     tv2.encender();
 
+    std::cout << std:: endl << "****** 3 televisiones (Sólo la 4K está encendida)" << std::endl;
 
-    tv1.toString();    
-    tv2.toString();
+    std::cout << std:: endl << tv1.toString() << std::endl;    
+    std::cout << tv2.toString() << std::endl;
+    std::cout << tv3.toString() << std::endl;
+
+    std::cout << std::endl;
 
     tv1.encender();
     tv2.apagar();
@@ -54,7 +58,9 @@ int main() {
     tv1.subir_v();
     tv2.bajar_v();
 
-    tv1.toString();    
-    tv2.toString();
+    std::cout << std:: endl << "****** 2 televisiones: la SmarTv se encendió y se subió el volumen, mientras que la 4K se apagó y bajo el volumen" << std::endl;
+
+    std::cout << std:: endl << tv1.toString() << std::endl;    
+    std::cout << tv2.toString() << std::endl;
 
 }
