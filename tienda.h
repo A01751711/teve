@@ -10,7 +10,6 @@ class Tienda{
     std::string nombre;
     std::vector <Producto> inventario;
 
-
     Tienda();
     Tienda(std::string nom);
     std::vector<Producto> mostrarInventario();
