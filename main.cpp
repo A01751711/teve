@@ -12,41 +12,48 @@
 
 int main() {
     
-    Inteligente tv1{"SmarTV", "SAMSUNG", 10000, "Inteligente", 50, 50, "Ninguna"};
-    TresD tv2{"TresD1", "SAMSUNG", 15000, "3D", 50, 75, "Ninguna"};
-    CuatroK tv3{"CuatroK1", "SAMSUNG", 20000, "4K", 50, 90, "Ninguna"};
-    TresD tv4{"TresD2", "LG", 25000, "3D", 50, 70, "Ninguna"};
-    CuatroK tv5{"CuatroK1", "LG", 30000, "4K", 50, 95, "Ninguna"};
+    
+    
+    
+    
 
 
-    std::vector<Tele> tvs;
-    tvs.push_back(tv1);
-    tvs.push_back(tv2);
-    tvs.push_back(tv3);
-    tvs.push_back(tv4);
-    tvs.push_back(tv5);
+    Tele *tvs[5];
+    tvs[0] = new Inteligente {"SmarTV", "SAMSUNG", 10000, "Inteligente", 50, 50, "Ninguna"};
+    tvs[1] = new TresD {"TresD1", "SAMSUNG", 15000, "3D", 50, 75, "Ninguna"};
+    tvs[2] = new CuatroK {"CuatroK1", "SAMSUNG", 20000, "4K", 50, 90, "Ninguna"};
+    tvs[3] = new TresD {"TresD2", "LG", 25000, "3D", 50, 70, "Ninguna"};
+    tvs[4] = new CuatroK {"CuatroK1", "LG", 30000, "4K", 50, 95, "Ninguna"};
 
-    for (size_t i = 0 ; i < tvs.size(); ++i){
-        tvs[i].apagar();
+    Tele *actual;
+
+    for (int i = 0 ; i < 5; ++i){
+        actual = tvs[i];
+        actual->apagar();
     }
 
-    for (size_t i = 0 ; i < tvs.size(); ++i){
-        tvs[i].encender();
+    for (int i = 0 ; i < 5; ++i){
+        actual = tvs[i];
+        actual->encender();
     }
 
-    for (size_t i = 0 ; i < tvs.size(); ++i){
-        tvs[i].set_entrada("HDMI1");
+    for (int i = 0 ; i < 5; ++i){
+        actual = tvs[i];
+        actual->set_entrada("HDMI1");
     }
  
-    for (size_t i = 0 ; i < tvs.size(); ++i){
-        tvs[i].subir_v();
-        std::cout << std::endl << std::to_string(tvs[i].get_volumen()) << std::endl;
+    for (int i = 0 ; i < 5; ++i){
+        actual = tvs[i];
+        std::cout << std::endl << "Volumen antes:" + std::to_string(actual->get_volumen()) << std::endl;
+        actual->subir_v();
+        std::cout << "Volumen después:" + std::to_string(actual->get_volumen()) << std::endl;
     }
  
-    for (size_t i = 0 ; i < tvs.size(); ++i){
-        std::cout << std::endl << "Volumen antes:" + std::to_string(tvs[i].get_volumen()) << std::endl;
-        tvs[i].bajar_v();
-        std::cout << "Volumen después:" + std::to_string(tvs[i].get_volumen()) << std::endl;
+    for (int i = 0 ; i < 5; ++i){
+        actual = tvs[i];
+        std::cout << std::endl << "Volumen antes:" + std::to_string(actual->get_volumen()) << std::endl;
+        actual->bajar_v();
+        std::cout << "Volumen después:" + std::to_string(actual->get_volumen()) << std::endl;
     }
 
 
