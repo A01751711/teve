@@ -18,8 +18,8 @@ protected:
 public:
     bool isEncendido();
     void setEncendido(bool);
-    void encender();
-    void apagar();
+    virtual void encender();
+    virtual void apagar();
     virtual std::string dimeFuncionActual();
     virtual void cambiaFuncionActual(std::string);
     std::string toString();

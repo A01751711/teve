@@ -7,60 +7,47 @@
 #include "cuatroK.h"
 #include "inteligente.h"
 #include "tresD.h"
+#include <vector>
 
 
 int main() {
-    Cliente cliente("César", "4189 xxxx xxxx xxxx", "Calle Gladiolas, 239");
-
-    Tienda liverpool{"Liverpool"};
-    Tienda sears{"Sears"};
-    Tienda palacio{"Palacio de Hierro"};
-
-    Inteligente tv1{"Televisión SmarTV", "Samsung", 25000, "inteligente", 50, 75, "HDMI1"};
-    CuatroK tv2{"Televisión 4K", "LG", 30000, "4K", 4, 100, "HDMI2"};
-    TresD tv3{"Televisión 3D", "", 30000, "4K", 50, 100, "HDMI3"};
     
+    Inteligente tv1{"SmarTV", "SAMSUNG", 10000, "Inteligente", 50, 50, "Ninguna"};
+    TresD tv2{"TresD1", "SAMSUNG", 15000, "3D", 50, 75, "Ninguna"};
+    CuatroK tv3{"CuatroK1", "SAMSUNG", 20000, "4K", 50, 90, "Ninguna"};
+    TresD tv4{"TresD2", "LG", 25000, "3D", 50, 70, "Ninguna"};
+    CuatroK tv5{"CuatroK1", "LG", 30000, "4K", 50, 95, "Ninguna"};
 
-    liverpool.anadir_producto(tv1);
-    liverpool.anadir_producto(tv2);
-    liverpool.anadir_producto(tv3);
-    sears.anadir_producto(tv1);
-    sears.anadir_producto(tv2);
-    sears.anadir_producto(tv3);
-    palacio.anadir_producto(tv1);
-    palacio.anadir_producto(tv2);
-    palacio.anadir_producto(tv3);
 
-    std::cout << "****** 3 tiendas" << std::endl;
+    std::vector<Tele> tvs;
+    tvs.push_back(tv1);
+    tvs.push_back(tv2);
+    tvs.push_back(tv3);
+    tvs.push_back(tv4);
+    tvs.push_back(tv5);
 
-    std::cout << std:: endl << liverpool.toString() << std::endl;
-    std::cout << sears.toString() << std::endl;
-    std::cout << palacio.toString() << std::endl;
+    for (size_t i = 0 ; i < tvs.size(); ++i){
+        tvs[i].apagar();
+    }
 
-    std::cout << std::endl;
+    for (size_t i = 0 ; i < tvs.size(); ++i){
+        tvs[i].encender();
+    }
 
-    tv2.encender();
+    for (size_t i = 0 ; i < tvs.size(); ++i){
+        tvs[i].set_entrada("HDMI1");
+    }
+ 
+    for (size_t i = 0 ; i < tvs.size(); ++i){
+        tvs[i].subir_v();
+        std::cout << std::endl << std::to_string(tvs[i].get_volumen()) << std::endl;
+    }
+ 
+    for (size_t i = 0 ; i < tvs.size(); ++i){
+        std::cout << std::endl << "Volumen antes:" + std::to_string(tvs[i].get_volumen()) << std::endl;
+        tvs[i].bajar_v();
+        std::cout << "Volumen después:" + std::to_string(tvs[i].get_volumen()) << std::endl;
+    }
 
-    std::cout << std:: endl << "****** 3 televisiones (Sólo la 4K está encendida)" << std::endl;
-
-    std::cout << std:: endl << tv1.toString() << std::endl;    
-    std::cout << tv2.toString() << std::endl;
-    std::cout << tv3.toString() << std::endl;
-
-    std::cout << std::endl;
-
-    tv1.encender();
-    tv2.apagar();
-
-    tv1.set_entrada("HDMI2");
-    tv2.set_entrada("HDMI1");
-
-    tv1.subir_v();
-    tv2.bajar_v();
-
-    std::cout << std:: endl << "****** 2 televisiones: la SmarTv se encendió y se subió el volumen, mientras que la 4K se apagó y bajo el volumen" << std::endl;
-
-    std::cout << std:: endl << tv1.toString() << std::endl;    
-    std::cout << tv2.toString() << std::endl;
 
 }

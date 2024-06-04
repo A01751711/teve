@@ -18,6 +18,35 @@ void Inteligente::set_streaming(std::string stream){streaming = stream;}
 
 std::string Inteligente::get_streaming(){return streaming;}
 
+void Inteligente::encender()
+{
+    setEncendido(true);
+    std::cout << std::endl << "Se ha encendido SmarTV sin streaming activado" << std::endl;
+}
+void Inteligente::apagar()
+{
+    setEncendido(false);
+    set_streaming("Ninguno");
+    std::cout << std::endl << "Se ha apagado SmarTV"<< std::endl;
+}
+
+void Inteligente::set_entrada(std::string ent)
+{
+    entrada = ent;
+    streaming = "Ninguno";
+    std::cout << std::endl << "Se ha cambiado la entrada a " + ent  + ", y ya no estás en nunguna plataforma de streaming"<< std::endl;
+}
+
+void Inteligente::subir_v()
+{
+    volumen = volumen + 1;
+}
+
+void Inteligente::bajar_v()
+{
+    volumen = volumen - 1;
+}
+
 std::string Inteligente::toString(){
     return "SmarTv(" + Tele::toString() +  
             "," + streaming + ")";

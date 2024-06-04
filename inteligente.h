@@ -14,6 +14,11 @@ class Inteligente : public Tele{
     Inteligente(std::string nombr, std::string marc, double preci, std::string tipot, int volume, double pulgada, std::string entrad);
     void set_streaming(std::string stream);
     std::string get_streaming();
+    void encender();
+    void apagar();
+    void set_entrada(std::string ent);
+    void subir_v();
+    void bajar_v();
 
     std::string toString();
 

@@ -16,6 +16,11 @@ class CuatroK : public Tele{
     bool isCuatroK();
     void activar();
     void desactivar();
+    void encender();
+    void apagar();
+    void set_entrada(std::string ent);
+    void subir_v();
+    void bajar_v();
 
     std::string toString();
 

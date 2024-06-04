@@ -24,10 +24,10 @@ class Tele : public Electrodomestico{
     int get_volumen();
     void set_pulgadas(double pul);
     double get_pulgadas();
-    void set_entrada(std::string ent);
-    std::string get_entrada();
-    void subir_v();
-    void bajar_v();
+    virtual void set_entrada(std::string ent);
+    virtual std::string get_entrada();
+    virtual void subir_v();
+    virtual void bajar_v();
 
     std::string toString();
 };
